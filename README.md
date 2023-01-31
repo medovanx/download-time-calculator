@@ -4,18 +4,24 @@
 [![GPLv3 License](https://img.shields.io/badge/License-GPL%20v3-yellow.svg)](https://opensource.org/licenses/)
 [![PyPI version](https://img.shields.io/pypi/pyversions/spotDL?color=%2344CC11&style=flat-square)](https://www.python.org/)
 
-Download Time Calculator is a PyQt5 based graphical user interface (GUI) application that calculates the estimated time it will take to download a file given the file size and download speed. The user inputs the file size and selects the appropriate unit (GB, MB, KB, or B) and download speed and select the appropriate unit (MB/s, KB/s, B/s, MBit/s, KBit/s, or Bit/s) to get the estimated download time in days, minutes, hours, seconds and milliseconds.
+Download Time Calculator is a PyQt5 based graphical user interface (GUI) application that calculates the estimated time it will take to download a file given the file size and download speed. The user inputs the file size and selects the appropriate unit (GB, MB, KB, or B) and download speed and select the appropriate unit (MB/s, KB/s, B/s, MBit/s, KBit/s, or Bit/s) to get the estimated download time in days, hours, minutes, hours, seconds and milliseconds.
 </div>
 
 # Notes
 In order to run the py file through the terminal you need to install [PyQt5](https://pypi.org/project/PyQt5/) library.
 
-If you like the easy way just download the [EXE release](https://github.com/medovanx/wr_calculator/releases/tag/portable) and open it.
+If you like the easy way just download the [EXE release](https://github.com/medovanx/Download-Time-Calculator/releases/tag/Latest) and open it.
 
 # GUI
-![GUI]()
-![GUI2]()
-![GUI3]()
+<p align="center">
+  <img src="https://i.imgur.com/0rNBYNE.png" width="50%">
+  <img src="https://i.imgur.com/a9MmVPf.png" width="49%">
+</p>
+<p align="center">
+  <img src="https://i.imgur.com/BSo1hb5.png" width="50%">
+</p>
+
+
 
 # Installation
 - [PyQt5](https://pypi.org/project/PyQt5/)
