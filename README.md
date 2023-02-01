@@ -12,6 +12,8 @@ In order to run the py file through the terminal you need to install [PyQt5](htt
 
 If you like the easy way just download the [EXE release](https://github.com/medovanx/Download-Time-Calculator/releases/tag/Latest) and open it.
 
+You can click on the Speed Test button and it will automatically input the value in the speed field, but it takes around 10 seconds, don't touch the window after clicking the button or else it might crash.
+
 # GUI
 <p align="center">
   <img src="https://i.imgur.com/pcpKLjE.png" width="49%">
