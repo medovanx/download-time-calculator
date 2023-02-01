@@ -1,5 +1,5 @@
 import sys
-from PyQt5.QtWidgets import QApplication, QLabel, QLineEdit, QPushButton, QVBoxLayout, QHBoxLayout, QWidget, QRadioButton, QButtonGroup, QTabWidget 
+from PyQt5.QtWidgets import QApplication, QLabel, QLineEdit, QPushButton, QVBoxLayout, QHBoxLayout, QWidget, QRadioButton, QButtonGroup
 from PyQt5 import QtGui
 from PyQt5.QtCore import Qt
 
@@ -50,7 +50,8 @@ class DownloadTimeCalculator(QWidget):
         self.setFixedHeight(300)
         # create label for file size
         self.sizeLabel = QLabel("File Size")
-        self.sizeLabel.setStyleSheet("QLabel {font-weight: bold; font-size: 15px; font-family: Tahoma;}")
+        self.sizeLabel.setStyleSheet(
+            "QLabel {font-weight: bold; font-size: 15px; font-family: Tahoma;}")
         self.sizeLabelInput = QLineEdit()
         self.sizeLabelInput.setValidator(QtGui.QDoubleValidator())
         # placeholder text
@@ -75,8 +76,10 @@ class DownloadTimeCalculator(QWidget):
 
         # create label for download speed
         self.speedLabel = QLabel("Download Speed")
-        self.speedLabelHint = QLabel("Click the speed test button to automatically set the value")
-        self.speedLabel.setStyleSheet("QLabel {font-weight: bold; font-size: 15px; font-family: Tahoma;}")
+        self.speedLabelHint = QLabel(
+            "Click the speed test button to automatically set the value")
+        self.speedLabel.setStyleSheet(
+            "QLabel {font-weight: bold; font-size: 15px; font-family: Tahoma;}")
         self.speedLabelInput = QLineEdit()
         self.speedLabelInput.setValidator(QtGui.QDoubleValidator())
         self.speedLabelInput.setPlaceholderText("Enter download speed")
@@ -139,7 +142,6 @@ class DownloadTimeCalculator(QWidget):
             }
          """)
 
-
         sizeUnitLayout = QHBoxLayout()
         sizeUnitLayout.addStretch(1)
         sizeUnitLayout.addWidget(self.sizeTB)
@@ -161,7 +163,8 @@ class DownloadTimeCalculator(QWidget):
 
         self.Result = QLabel()
         self.Result.setAlignment(Qt.AlignCenter)
-        self.Result.setStyleSheet("QLabel {font-weight: bold; font-size: 13px; font-family: Tahoma;}")
+        self.Result.setStyleSheet(
+            "QLabel {font-weight: bold; font-size: 13px; font-family: Tahoma;}")
 
         self.Developer = QLabel(
             '© Mohamed Darwesh (<a href="https://github.com/medovanx">@medovanx</a>)')
@@ -198,38 +201,33 @@ class DownloadTimeCalculator(QWidget):
     def calculate(self):
         try:
             size = float(self.sizeLabelInput.text())
-            sizeUnit = self.sizeTB.text() if self.sizeTB.isChecked() else self.sizeGB.text() if self.sizeGB.isChecked() else self.sizeMB.text(
-            ) if self.sizeMB.isChecked() else self.sizeKB.text() if self.sizeKB.isChecked() else self.sizeB.text()
+            sizeUnit = self.sizeTB.text() if self.sizeTB.isChecked() else self.sizeGB.text() if self.sizeGB.isChecked() else self.sizeMB.text() if self.sizeMB.isChecked() else self.sizeKB.text() if self.sizeKB.isChecked() else self.sizeB.text()
             speed = float(self.speedLabelInput.text())
-            speedUnit = self.speedMB.text() if self.speedMB.isChecked() else self.speedKB.text() if self.speedKB.isChecked() else self.speedB.text() if self.speedB.isChecked(
-            ) else self.speedMbit.text() if self.speedMbit.isChecked() else self.speedKbit.text() if self.speedKbit.isChecked() else self.speedBit.text()
+            speedUnit = self.speedMB.text() if self.speedMB.isChecked() else self.speedKB.text() if self.speedKB.isChecked() else self.speedB.text() if self.speedB.isChecked() else self.speedMbit.text() if self.speedMbit.isChecked() else self.speedKbit.text() if self.speedKbit.isChecked() else self.speedBit.text()
         except ValueError:
             self.Result.setText(
                 "<font color='red'>Please enter a valid value.</font>")
             return
 
         time = DownloadTime(size, sizeUnit, speed, speedUnit)
-        months = int(time // 30)
-        days = int(time % 30)
-        hours = int(time * 24 % 24)
-        minutes = int(time * 24 * 60 % 60)
-        seconds = int(time * 24 * 60 * 60 % 60)
-        if months == 0 and days == 0 and hours == 0 and minutes == 0 and seconds == 0:
+        days = int(time // 24)
+        hours = int(time % 24)
+        minutes = int((time * 60) % 60)
+        seconds = int((time * 3600) % 60)
+        if days == 0 and hours == 0 and minutes == 0 and seconds == 0:
             self.Result.setText(f"Download Time: less than a second")
-        elif months == 0:
-            self.Result.setText(
-                f"Download Time: {days} days, {hours} hours, {minutes} minutes, {seconds} seconds")
-        elif months == 0 and days == 0:
-            self.Result.setText(
-                f"Download Time: {hours} hours, {minutes} minutes, {seconds} seconds")
-        elif months == 0 and days == 0 and hours == 0:
-            self.Result.setText(
-                f"Download Time: {minutes} minutes, {seconds} seconds")
-        elif months == 0 and days == 0 and hours == 0 and minutes == 0:
+        elif days == 0 and hours == 0 and minutes == 0:
             self.Result.setText(f"Download Time: {seconds} seconds")
+        elif days == 0 and hours == 0:
+            self.Result.setText(
+                f"Download Time: {minutes} minutes and {seconds} seconds")
+        elif days == 0:
+            self.Result.setText(
+                f"Download Time: {hours} hours, {minutes} minutes and {seconds} seconds")
         else:
             self.Result.setText(
-                f"Download Time: {months} months, {days} days, {hours} hours, {minutes} minutes, {seconds} seconds")
+                f"Download Time: {days} days, {hours} hours, {minutes} minutes and {seconds} seconds")
+            
 
 
 app = QApplication(sys.argv)
