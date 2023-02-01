@@ -8,10 +8,6 @@ Download Time Calculator is a PyQt5 based graphical user interface (GUI) applica
 </div>
 
 # Notes
-In order to run the py file through the terminal you need to install [PyQt5](https://pypi.org/project/PyQt5/) library.
-
-If you like the easy way just download the [EXE release](https://github.com/medovanx/Download-Time-Calculator/releases/tag/Latest) and open it.
-
 You can click on the Speed Test button and it will automatically input the value in the speed field, but it takes around 10 seconds, don't touch the window after clicking the button or else it might crash.
 
 # GUI
@@ -19,13 +15,6 @@ You can click on the Speed Test button and it will automatically input the value
   <img src="https://i.imgur.com/pcpKLjE.png" width="49%">
   <img src="https://i.imgur.com/QdkXsds.png" width="49%">
 </p>
-
-
-
-# Installation
-- [PyQt5](https://pypi.org/project/PyQt5/)
-  - PyQt5 can be installed by running `pip install PyQt5`.
-  > On some systems you might have to change `pip` to `pip3`.
 
 # Authors
 - Mohamed Darwesh [@medovanx](https://github.com/medovanx)
