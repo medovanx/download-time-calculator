@@ -13,9 +13,9 @@ In order to run the py file through the terminal you need to install [PyQt5](htt
 If you like the easy way just download the [EXE release](https://github.com/medovanx/Download-Time-Calculator/releases/tag/Latest) and open it.
 
 # GUI
-<p >
-  <img src="https://i.imgur.com/pcpKLjE.png" width="500">
-  <img src="https://i.imgur.com/QdkXsds.png" width="500">
+<p align="center">
+  <img src="https://i.imgur.com/pcpKLjE.png" width="50%">
+  <img src="https://i.imgur.com/QdkXsds.png" width="50%">
 </p>
 
 
