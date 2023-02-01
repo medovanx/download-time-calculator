@@ -4,7 +4,7 @@
 [![GPLv3 License](https://img.shields.io/badge/License-GPL%20v3-yellow.svg)](https://opensource.org/licenses/)
 [![PyPI version](https://img.shields.io/pypi/pyversions/spotDL?color=%2344CC11&style=flat-square)](https://www.python.org/)
 
-Download Time Calculator is a PyQt5 based GUI application that calculates the estimated time it will take to download a file given the file size and download speed.
+A PyQt5 based GUI application that calculates the estimated time it will take to download a file given the file size and download speed.
 </div>
 
 # Notes
