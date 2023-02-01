@@ -14,8 +14,8 @@ If you like the easy way just download the [EXE release](https://github.com/medo
 
 # GUI
 <p align="center">
-  <img src="https://i.imgur.com/pcpKLjE.png" width="50%">
-  <img src="https://i.imgur.com/QdkXsds.png" width="50%">
+  <img src="https://i.imgur.com/pcpKLjE.png" width="49%">
+  <img src="https://i.imgur.com/QdkXsds.png" width="49%">
 </p>
 
 
