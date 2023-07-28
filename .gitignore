@@ -1,4 +1,4 @@
 *.ico
 *.ini
-/build
 /assets
+/build

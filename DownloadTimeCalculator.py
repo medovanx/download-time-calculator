@@ -1,8 +1,16 @@
-import sys
+import sys, os
+import speedtest
 from PyQt5.QtWidgets import QApplication, QLabel, QLineEdit, QPushButton, QVBoxLayout, QHBoxLayout, QWidget, QRadioButton, QButtonGroup
 from PyQt5 import QtGui
 from PyQt5.QtCore import Qt
 
+def resource_path(relative_path):
+    try:
+        base_path = sys._MEIPASS
+    except Exception:
+        base_path = os.path.abspath(".")
+
+    return os.path.join(base_path, relative_path)
 
 def sizeToBytes(size, units):
     units = units.lower()
@@ -45,9 +53,9 @@ class DownloadTimeCalculator(QWidget):
         super().__init__()
 
         self.setWindowTitle("Download Time Calculator")
-        self.setWindowIcon(QtGui.QIcon(
-            r"M:\Mohamed\Programming\Download Time Calculator\ico.png"))
+        self.setWindowIcon(QtGui.QIcon(resource_path(r"assets\ico.png")))
         self.setFixedHeight(300)
+    
         # create label for file size
         self.sizeLabel = QLabel("File Size")
         self.sizeLabel.setStyleSheet(
@@ -188,15 +196,16 @@ class DownloadTimeCalculator(QWidget):
         self.setLayout(mainLayout)
 
     def SpeedTest(self):
-        import speedtest
         st = speedtest.Speedtest()
         st.get_best_server()
         try:
             self.speedLabelInput.setText(str(st.download() / 10**6))
             self.speedMbit.setChecked(True)
-        except:
-            self.Result.setText(f"Error occured while testing speed")
+        except Exception as e:
+            self.Result.setText(f"Error: {e}")
             return
+        finally:
+            self.Result.setText("Speed test completed successfully.")
 
     def calculate(self):
         try:
