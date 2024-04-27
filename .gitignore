@@ -1,3 +1,5 @@
 *.ico
 *.ini
 /build
+.vscode/
+.venv/
