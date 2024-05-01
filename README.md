@@ -12,8 +12,8 @@ You can click on the Speed Test button and it will automatically input the value
 
 # GUI
 <p align="center">
-  <img src="https://github.com/medovanx/download-time-calculator/assets/29468096/77fb4075-8d85-43ec-a224-aa6e3ac1684b" width="49%">
-  <img src="https://github.com/medovanx/download-time-calculator/assets/29468096/274f67fb-430d-47bb-b4ec-7e699d532c2c" width="49%">
+  <img src="https://i.imgur.com/pcpKLjE.png" width="49%">
+  <img src="https://i.imgur.com/QdkXsds.png" width="49%">
 </p>
 
 # Authors
